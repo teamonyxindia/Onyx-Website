@@ -1,0 +1,656 @@
+
+ <!DOCTYPE html>
+<html>
+ <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aeronotics Team of kjsce ">
+    <meta name="author" content="Team Onyx">
+    <!-- <link rel="onyx logo" href="images/ONYX_LOGO_ICON.ico"  type="image/x-icon" /> -->
+    <link rel="icon" href="IMAGES/ONYXLOGO.png"   type="image/png"  /> 
+    <title>TEAM ONYX</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!-- Owl Carousel min CSS -->
+    <link rel="stylesheet" href="docs.theme.min.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="owl.carousel.min.css">
+    <link rel="stylesheet" href="owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="mycss.css">
+    <!-- font awesome -->
+    <link rel="text/stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap javascript component -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!-- link to  javascript -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+
+  * {
+  font-family: 'Roboto';
+  font-style: justify;
+}
+
+.sponsor{
+    padding-top:0px ;
+  }
+.description{
+  font-weight: bold;
+  /*letter-spacing: 2px;*/
+  color: #999;
+  text-align:center;
+  /*border-bottom: 1px solid rgba(0, 0, 0,0.1);*/
+  /*padding-bottom: 5px;*/
+  font-size: 1.6em;
+  color:#3b5998;
+}
+
+.profile{
+  margin-top: 25px;
+}
+
+.profile h1{
+  font-weight: normal;
+  /*font-size: 20px;*/
+  /*margin:10px 0 0 0;*/
+}
+.profile h2{
+  font-size: 14px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+.profile .img-box{
+  opacity: 1;
+  display: block;
+  position: relative;
+}
+.profile .img-box:after{
+  content:"";
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.img-box ul{
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  text-align: center;
+  width: 100%;
+  padding-left: 0px;
+  height: 0px;
+  margin:0px;
+  opacity: 0;
+}
+.profile .img-box:after, .img-box ul, .img-box ul li{
+  -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+.img-box ul i{
+  font-size: 130% ;
+  /*letter-spacing: 10px;*/
+}
+.img-box ul li{
+    width: 29%;
+      height: auto;
+      /*text-align: center;*/
+      /*border: 1px solid #88C425;*/
+      /*margin: 2px;*/
+      /*padding: 5px;*/
+  display: inline-block;
+}
+.img-box a{
+  color:#fff;
+}
+.img-box:hover:after{
+  opacity: 1;
+}
+.img-box:hover ul{
+  opacity: 1;
+}
+.img-box ul a{
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.img-box a:hover li{
+  border-color: #fff;
+  color: #88C425;
+}
+/*a{
+    color:#88C425;
+}*/
+a:hover{
+    text-decoration:none;
+    color:#519548;
+}
+
+i.red{
+    color:#BC0213;
+} 
+.center_div
+{
+  text-align: center;
+  margin :auto;
+  padding:auto;
+  /*max-height: 100%*/
+  height:60px;
+}
+h3
+{
+  color:black;
+}
+
+.loader .fa {
+  color:black;
+}
+
+.loader {
+  width: 100px;
+  height: 80px;
+  position: fixed;
+  z-index: 99999;
+  top: 0; right: 0; left: 0; bottom: 0;
+  margin: auto;
+}
+.loader .image {
+  width: 100px;
+  height: 160px;
+  font-size: 40px;
+  text-align: center;
+  transform-origin: bottom center;
+  animation: 3s rotate infinite;
+  opacity: 0;
+}
+.loader span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes rotate{
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+</style>
+<script type="text/javascript">
+  $(window).on('load',function(){
+    $(".loader").css("display", "none");
+     $(".main").css("display", "block");
+});
+</script>
+  </head>
+<body>
+  <div class="loader">
+                <div class="image">
+                  <i class="fa fa-plane"></i>
+                </div>
+                <span></span>
+        </div>
+
+        <script>
+                $(document).ready(function() {
+          var counter = 0;
+        
+          // Start the changing images
+          setInterval(function() {
+            if(counter == 3) { 
+              counter = 0; 
+            }
+        
+            changeImage(counter);
+            counter++;
+          }, 3000);
+        
+          // Set the percentage off
+          loading();
+        });
+        
+        function changeImage(counter) {
+          var images = [
+            '<i class="fa fa-fighter-jet"></i>',
+            '<i class="fa fa-paper-plane"></i>',
+            '<i class="fa fa-plane"></i>'
+          ];
+        
+          $(".loader .image").html(""+ images[counter] +"");
+        }
+        
+        function loading(){
+          var num = 1;
+        
+          for(i=0; i<=49; i++) {
+            setTimeout(function() { 
+              $('.loader span').html(num+'%');
+              num=num+2;
+            },i*120);
+          };
+        
+        }
+        </script>
+
+        <div class="main" style="display: none;">
+    <!-- div for navbar-->
+    <div>
+      <nav class="navbar mynav navbar-default navbar-fixed-top " role="navigation">
+        <div class="container-fluid" >
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar" >
+              <span class="sr-only" >Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="http://www.somaiya.edu/kjsce" class="navbar-brand"  target="_blank" style="padding-left:10px"> 
+              <img src="IMAGES\sponsor\svv_logo18.png" class="navimgsize" alt="kjsce logo">
+            </a>
+            <a href="#" class="navbar-brand" >
+              <img src="IMAGES\ONYXLOGO.png" class="navimgsize" alt="Team onyx logo" style="padding-left:0px">
+            </a>
+          </div>
+          <div id="mynavbar" class="collapse navbar-collapse ">
+            <ul class="nav navbar-nav navbar-right nav_right_style"  >
+               <li ><a href="index.html">Home</a></li>
+              <li><a href="AboutUs.html">About Us</a></li>
+              <!-- <li><a href="OurTeam.html">Our Team</a></li> -->
+              <li><a href="OurTeam.html">Our Team</a></li>
+              <li><a href="Workshop.html">Workshops</a></li>
+              <li class="active"><a href="#">Sponsors</a></li>
+              <!--<li><a href="Crowdfunding.html">Crowd Funding</a></li>-->
+              <li ><a href="ContactUs.html">Contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>   
+    </div>
+    <!-- end navbars -->
+
+<!--sponsors section START-->
+<section class="sponsor">
+    <div class="container-fluid" style="padding-left: 0px !important; padding-right: 0px !important; margin:0;">
+      <div class="row">
+       <div class="col-sm-10 col-xs-10 col-lg-12 col-md-12 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  "> 
+          <h2 class="description" style="line-height: 50px;"><span style="padding-bottom:12px ;border-bottom: 2px solid #E7E7E7;">WHY SPONSOR US ?</span></h2>
+          <div style="text-align: center;">
+          <p>
+            Help us to help you. 
+Active co-operation is the path to mutual progress. We partake not only in some of the best competitions in the world but also present our Aircraft in national level technical events such as Abhiyantriki and Maker Mela. These events and competitions are attended by industry giants and other people from various fields of engineering. This makes up a large amount of people and exposure to such an amount of crowd can help in forwarding your company. Moreover, if you sponsor us you will present in all the marketing media that we create, that includes highlight videos, instagram stories and posts, posters and information brochures where your company will be labelled as sponsor. Team Onyx India will make sure that your company is advertised and represented in a professional manner and provide the right amount of exposure to the public eyes.
+Please do check out the about us section for more detailed insight to our projects. 
+          </p>
+        </div>
+        <div>
+  <form action="Sponsorship Proposal Team Onyx India.pdf" target="_blank">
+    <input  class="btn btn-primary" type="submit" value="CONTRIBUTE TO OUR PROGRESS" style="display: block; margin: 0 auto; background-color: #3b5998;">
+  </form>
+</div>
+        </div>
+      </div>
+    </div>
+
+  <div class="container-fluid">
+
+     <div class="row">
+    
+  
+
+      <div class="col-lg-offset-0 col-md-offset-0 col-sm-offset-1 col-xs-offset-1" style="margin-left: 0%"> 
+        <h2 class="description" ><span style="padding-bottom:12px ;border-bottom: 2px solid #E7E7E7;">OUR SPONSORS</span></h2>
+      </div>
+      <br>
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\svv_logo18.png' style=" width:100%;  " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://www.somaiya.edu/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Somaiya Vidyavihar</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\kjsce7.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://kjsce.somaiya.edu/kjsce?/kjsce" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                </ul>
+              </div><div class="center_div"><h3 style="font-size: 1.5em;">KJSCE </h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+               
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="img-box">
+         <img src='IMAGES\sponsor\somaiya_trust17.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://www.somaiya.edu/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Somaiya Trust</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> <div class="img-box">
+         <img src='IMAGES\sponsor\apc_logo6.png' style=" width:100%;  " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://apcprop.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">APC Propeller</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+</div>
+
+
+      <!-- second row -->
+        
+
+    
+    <div class="row">
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\packshield13.png' style=" width:100%;  " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="http://packshieldindia.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Packshield</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\ajorlogo1.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="#"><li><i class="fa fa-globe"></i></li></a>
+                </ul>
+              </div><div class="center_div"><h3 style="font-size: 1.5em;">Ajor</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\HENKEL.PNG' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://www.henkel-adhesives.com/in/en/about/our-brands/loctite.html?77ed392f1700903324fec780cf6e7ca72987b1a0.page=1" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Henkel Loctite</h3>
+                  
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\scorpion_motor.jpg' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://www.scorpionsystem.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Scorpion</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+    </div>
+
+      <!-- 3rd Row -->
+     
+
+    
+<div class="row">
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\nine_m.png' style=" width:100%;  " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="http://ninemart.in/Index.aspx" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Nine Mart</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\astral_adhesives.jpg' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="http://www.resinova.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                </ul>
+              </div><div class="center_div"><h3 style="font-size: 1.5em;">Astral Adhesives</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div> </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="img-box">
+         <img src='IMAGES\sponsor\simpliforge.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="http://simpliforge.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Simpliforge</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="row">
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\ansys5.png' style=" width:100%;  " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://www.ansys.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Ansys</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\riidl logo15.PNG' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="http://riidl.org/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                </ul>
+              </div><div class="center_div"><h3 style="font-size: 1.5em;">RIIDL</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> <div class="img-box">
+         <img src='IMAGES\sponsor\mm-logo11.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://makermela.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Maker Mela</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="img-box">
+         <img src='IMAGES\sponsor\matlab10.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://in.mathworks.com/" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Matlab</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> <div class="img-box">
+         <img src='IMAGES\sponsor\solidwork16.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="https://www.solidworks.com" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Solid Works</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--></div>
+      </div>
+
+    </div>
+
+      <!-- fifth row -->
+        
+
+    <div class="col-lg-4 col-sm-4 col-xs-4 col-md-4 col-sm-offset-4 col-xs-offset-4 col-md-offset-4 col-lg-offset-4  profile"> <div class="img-box">
+         <img class="img-responsive" src='IMAGES\sponsor\araldite.png' style=" width:75%; height: auto; margin: auto;" >
+         <ul class="text-center">
+                  <!--<a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>-->
+                  <a href="http://aralditeadhesives.com/index.php?lang=en" target="_blank"><li><i class="fa fa-globe"></i></li></a>
+                 </ul></div><div class="center_div"><h3 style="font-size: 1.5em;">Araldite</h3>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
+              </div>
+      </div>
+</div>
+      <!-- 4th row -->
+      
+
+     
+    <!--<div class="row"> 
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\astral_logo9.png' style=" width:100%;  " >
+         <ul class="text-center">
+                  <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                 </ul></div><div class="center_div"><h3>Astral Pipes</h3>-->
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>-->
+              <!--</div>
+      </div>-->
+
+      <!--<div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="img-box">
+         <img src='IMAGES\sponsor\american_nuts_&_bolts4.png' style=" width:100%; " >
+         <ul class="text-center">
+                  <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                </ul>
+              </div><div class="center_div"><h3>American Bolts & Nuts </h3>-->
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>--><!--</div> </div>-->
+
+
+      <!-- <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> <div class="img-box">
+         <img src='IMAGES\sponsor\integriti19.png' style=" width:100%;  " >
+         <ul class="text-center">
+                  <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                  <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                  <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                 </ul></div><div class="center_div"><h3>Integriti</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>
+      </div> -->
+
+    </div>
+</section>
+<br>
+<br>
+
+
+
+
+
+<!--sponsors section END-->
+
+
+  <!-- start footer -->
+ <footer>
+ 
+  <div class="row" style="  max-width: none;" id="my_footer">
+ <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4 ">
+  <span ><i class="fa fa-phone" aria-hidden="true"></i></span><br>
+  <span>Raj Mandal: +91-9967154122<br/>
+  raj.mandal@somaiya.edu</span>
+ </div>
+ <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4"  >
+  <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span><br>
+  <span>
+  teamonyxindia.engg@somaiya.edu</span>
+ </div>
+ <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4">
+  <span><i class="fa fa-map-marker" aria-hidden="true"></i></span><br>
+  <span>Team Onyx<br />
+  Mega Project room, Aryabhatta building,<br/>
+  K. J. Somaiya College of Engineering<br />
+  Vidyavihar East<br />
+  Mumbai - 400077.</span>
+ </div>
+ <!-- social media links -->
+ <div  id="social_links" class="col-xs-12 col-sm-offset-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">  
+ <!-- fb -->
+ <a href="https://www.facebook.com/TeamOnyxIndia/" target="_blank"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i> </a>
+ <!-- youtube -->
+ <a href="https://www.youtube.com/channel/UCghiocKsIi8fK0hOQ1ot_6Q" target="_blank"><i class="fa fa-lg fa-youtube" aria-hidden="true"></i></a>
+ <!-- instagram -->
+ <a href="https://www.instagram.com/team_onyx_india/" target="_blank"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+ <!-- twitter -->
+ <a href="https://twitter.com/TeamOnyxIndia" target="_blank"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a>
+ <!-- linkedin -->
+ <a href="https://in.linkedin.com/company/team-onyx-india" target="_blank"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a>
+ </div>
+ <!-- end social media links -->
+
+<div class="col-xs-12 col-sm-offset-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+  <small>&copy; Copyright 2019 Team Onyx India. All Rights Reserved.</small>
+  </div>
+
+  </div>
+ </footer>
+ <!-- end footer -->
+</div>
+    </body>
+</html>

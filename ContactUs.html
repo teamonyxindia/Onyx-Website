@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aeronotics Team of kjsce ">
+    <meta name="author" content="Team Onyx">
+    <!-- <link rel="onyx logo" href="images/ONYX_LOGO_ICON.ico"  type="image/x-icon" /> -->
+    <link rel="icon" href="IMAGES/ONYXLOGO.png"   type="image/png"  /> 
+    <title>TEAM ONYX</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="mycss.css">
+    <!-- font awesome -->
+    <link eel="text/sttylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- bootstrap javascript component -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!-- link to  javascript -->
+    <!--<script src="javascript/myjavascript.js"  type="text/javascript"></script>-->
+     <!-- font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+
+    * {
+  	font-family: 'Roboto';
+    text-align: center;
+	}
+
+    section {margin:0; padding:0px}
+    /*GMAP STYLES */
+    .gmap-area {
+  background-image: url("");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 0;margin:0;
+}
+
+.gmap-area .gmap iframe {
+  border-radius: 20%;
+  height: 480px;
+  width: 500px;
+}
+
+.gmap{
+    border: 10px solid #f6f5f0;
+    border-radius: 20%;
+    height: 500px;
+    width: 500px;
+    box-shadow: 0px 0px 3px 3px #e7e4dc;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.gmap-area .map-content ul {
+  list-style: none; 
+}
+
+.gmap-area .map-content address h5{
+  font-weight: 700;
+  /* font-size: 16px; */
+}
+#contact h1,h2,h3,p {
+  margin:0 0 30px 0;
+  /*font-family: 'Patua One', cursive;*/
+  text-transform: uppercase;
+  letter-spacing:1px;
+}
+
+#contact p{
+  margin:0 0 25px;
+  font-size:18px;
+  line-height:1.6em;
+  /*font-family: 'Patua One', cursive;*/
+}
+#contact a{
+  color:#26a5d3;
+}
+#contact a:hover,a:focus{
+  text-decoration:none;
+  color:#26a5d3;
+}
+
+#contact{
+  background:#333333;
+  color:#f4f4f4;
+  padding-bottom:80px;
+}
+#contact label {
+  /*font-family: 'Patua One', cursive;*/
+  font-size:1.5em;
+}
+
+#contact textarea.form-control{
+    height:100px;
+}
+.list-inline li {margin-top:5px;}
+.media {display:inline-block;}
+.list-inline .btn {width:150px;}
+
+@media screen and (max-width: 720px){
+.gmap{height:300px;width:300px;}
+
+.gmap-area .gmap iframe {
+  border-radius: 20%;
+  height: 280px;
+  width: 300px;
+}
+
+}
+.loader .fa {
+  color:black;
+}
+
+.loader {
+  width: 100px;
+  height: 80px;
+  position: fixed;
+  z-index: 99999;
+  top: 0; right: 0; left: 0; bottom: 0;
+  margin: auto;
+}
+.loader .image {
+  width: 100px;
+  height: 160px;
+  font-size: 40px;
+  text-align: center;
+  transform-origin: bottom center;
+  animation: 3s rotate infinite;
+  opacity: 0;
+}
+.loader span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes rotate{
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+    </style>
+    <script type="text/javascript">
+  $(window).on('load',function(){
+    $(".loader").css("display", "none");
+     $(".main").css("display", "block");
+});
+</script>
+
+  </head>
+<body>
+  <div class="loader">
+                <div class="image">
+                  <i class="fa fa-plane"></i>
+                </div>
+                <span style="font-size: 16px;"></span>
+        </div>
+
+        <script>
+                $(document).ready(function() {
+          var counter = 0;
+        
+          // Start the changing images
+          setInterval(function() {
+            if(counter == 3) { 
+              counter = 0; 
+            }
+        
+            changeImage(counter);
+            counter++;
+          }, 3000);
+        
+          // Set the percentage off
+          loading();
+        });
+        
+        function changeImage(counter) {
+          var images = [
+            '<i class="fa fa-fighter-jet"></i>',
+            '<i class="fa fa-paper-plane"></i>',
+            '<i class="fa fa-plane"></i>'
+          ];
+        
+          $(".loader .image").html(""+ images[counter] +"");
+        }
+        
+        function loading(){
+          var num = 1;
+        
+          for(i=0; i<=49; i++) {
+            setTimeout(function() { 
+              $('.loader span').html(num+'%');
+              num=num+2;
+            },i*120);
+          };
+        
+        }
+        </script>
+
+        <div class="main" style="display: none;">
+    <!-- div for navbar-->
+    <div >
+      <nav class="navbar mynav navbar-default navbar-fixed-top " role="navigation" >
+        <div class="container-fluid" >
+          <div class="navbar-header" >
+            <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar" >
+              <span class="sr-only" >Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="http://www.somaiya.edu/kjsce" class="navbar-brand"  target="_blank" style="padding-left:10px"> 
+              <img src="IMAGES\sponsor\svv_logo18.png" class="navimgsize" alt="kjsce logo">
+            </a>
+            <a href="#" class="navbar-brand" >
+              <img src="IMAGES/ONYXLOGO.png" class="navimgsize" alt="Team onyx logo" style="padding-left:0px">
+            </a>
+          </div>
+          <div id="mynavbar" class="collapse navbar-collapse " style="font-size: 120%;">
+            <ul class="nav navbar-nav navbar-right nav_right_style"  >
+              <li ><a href="index.html">Home</a></li>
+              <li ><a href="AboutUs.html">About Us</a></li>
+              <!-- <li><a href="OurTeam.html">Our Team</a></li> -->
+              <li><a href="OurTeam.html">Our Team</a></li>
+              <li><a href="Workshop.html">Workshops</a></li>
+              <li><a href="Sponsors.html">Sponsors</a></li>
+              <!--<li><a href="CrowdFunding.html">Crowd Funding</a></li>-->
+              <li class="active"><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>   
+    </div>
+    
+    <!-- end navbars -->
+    <!-- Google maps -->
+
+<div class="gmap-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <div class="gmap">
+                            <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.787241671583!2d72.89763341480239!3d19.07308975702058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c627a20bcaa9%3A0xb2fd3bcfeac0052a!2sK.J.+Somaiya+College+Of+Engineering!5e0!3m2!1sen!2sin!4v1503924034565" frameborder="0"></iframe>
+                        </div>
+                    </div>
+<br>
+<br>
+                    <div class="col-sm-6 map-content">
+                        <ul class="row">
+                            <li class="col-sm-6">
+                                <address>
+                                  <div style="margin-left: 0%; font-size: 1em;">
+                                    <span>
+    <h3 style="padding:5px; margin:0;"><i class="fa fa-map-marker" aria-hidden="true" style="color: black !important;" ></i><!-- Team Onyx--></h3>
+    
+  Room No: 20, Aryabhatta building,<br/>
+  K. J. Somaiya College of Engineering<br />
+  Vidyavihar East<br/>
+  Mumbai - 400077.
+</span>
+</div>
+  <hr />
+<div style="margin-left: 0%; font-size: 1em;" >
+     <span> 
+    <h3 style="padding:5px; margin:0;"><i class="fa fa-envelope-o" aria-hidden="true" style="color: black !important;" ></i><!-- Email Us:--></h3>
+    teamonyxindia.engg@somaiya.edu<br/>raj.mandal@somaiya.edu
+</span>
+</div>
+    <hr />
+    <div style="margin-left: 0%; font-size: 1em;">
+        <span>
+
+    <h3 style="padding:5px; margin:0;"> <i class="fa fa-phone" aria-hidden="true" style="color: black !important;" ></i><!-- Contact US --></h3>
+    +91 8779909348<br/>
+    +91 9967154122<br/>
+    </span>
+  </div>
+                                </address>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- CONTACT INFO -->
+    <section >
+    <div class="row">
+        <!-- Contact form -->
+         <div class="col-md-12">
+          
+
+
+          <section id="contact" class="content-section text-center">
+        <div class="contact-section">
+            <div style="padding:20px;">
+              <h2>Contact Us</h2>
+              <p>Feel free to Reach Us by filling the contact form or visiting our social network sites.</p>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <form class="form-horizontal" method="post" name="contact_form" id="contact-form">
+                    <div class="form-group" style="margin: 0% 5% 3% 5%;">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" class="form-control" placeholder="Type your name here..." required>
+                    </div>
+                    <div class="form-group" style="margin: 0% 5% 3% 5%;">
+                      <label for="email">Email</label>
+                      <input name="email" type="email" class="form-control" placeholder="Type your email id here..." required>
+                    </div>
+                    <div class="form-group " style="margin: 0% 5% 3% 5%;">
+                      <label for="message">Your Message</label>
+                     <textarea  class="form-control"  name="message" placeholder="Type your message here..." required></textarea> 
+                    </div>
+                    <br>
+                    <input value="Send Message" type="submit" name="submit" class="btn btn-default" />
+                  </form>
+                  <br>
+                  <br>
+                  <hr>
+                  <br>
+                  <br>
+
+            <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby-6WhVMiU08MkpwCahczpPEfXVMV2rnWd47ZnyxQ5IEzyA8sJ4/exec'
+  const form = document.forms['contact_form']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(function(response) 
+        {console.log('Success!', response);
+        alert("Your input has been recorded. We will get back to you soon.")})
+      .catch(function(error)
+        {console.error('Error!', error.message);
+        alert("Sorry, there was/were error(s) submitting your form. Please try again.")
+      })
+  	document.getElementById("contact-form").reset();
+
+  });
+
+            </script>
+            <div>
+                    <h3>Our Social Sites</h3>
+                    <ul class="list-inline banner-social-buttons">
+                    <li><div class="media"><a href="https://twitter.com/TeamOnyxIndia" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-twitter" style="color:#00b6f1"> <span class="network-name" style="color:black"> Twitter</span></i></a></div></li>
+                    <li><div class="media"><a href="https://www.facebook.com/TeamOnyxIndia/"  target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook" style="color:#3b5998"></i> <span class="network-name" style="color:black"> Facebook</span></a></div></li>
+                    <li><div class="media"><a href="https://www.youtube.com/channel/UCghiocKsIi8fK0hOQ1ot_6Q" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-youtube-play" style="color:#ff0000"> <span class="network-name" style="color:black"> Youtube</span></i></a></div></li>
+                    <li><div class="media"><a href="https://www.instagram.com/team_onyx_india/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-instagram" style="color:#c32aa3"> <span class="network-name" style="color:black"> Instagram</span></i></a></div></li>
+                    <li><div class="media"><a href="https://in.linkedin.com/company/team-onyx-india" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin" style="color:#007bb6"> <span class="network-name" style="color:black"> LinkedIn</span></i></a></div></li>
+                  </ul>
+
+      
+                  <!-- START New Feeds -->
+                  <!--
+ <div class="new_feeds container-fluid">
+
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10" id="fb_div" ><H3 style="text-align:center;color:white;">FACEBOOK</H3>
+    <iframe id="fb_widget" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTeamOnyxIndia&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10" id="twitter_div" style="padding-left: 90px">
+      <h3  style="text-align:center;color:white;">Twitter </h3>
+      <a class="twitter-timeline" data-width="100%" data-height="500" data-dnt="true" href="https://twitter.com/TeamOnyxIndia?ref_src=twsrc%5Etfw">Tweets by TeamOnyxIndia</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div> -->
+
+
+    <!-- youtube Videos -->
+    <!--
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10" id="youtube_div" style="padding-left: 50px">
+      <h3  style="text-align:center;color:white;">Youtube</h3>
+      <div style="width:100%;height:150px; " id="video_1">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sPz6oBSqbbQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <br>
+      <div style="width:100%;height:150px; " id="video_2">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/acLqCVgV4e8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <br>
+      <div style="width:100%;height:150px; " id="video_2">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/loRjjngLU6Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>-->
+      <!--
+      <div class="row"  > 
+           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top: 20px" id="video_2">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/acLqCVgV4e8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top: 20px" id="video_3">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Sa889anuHE4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div> -->
+    <!-- next row -->
+     <!--<div class="row" >
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top: 20px" id="video_4">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HnVLaVO6HtI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top: 20px"  id="video_5">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Mp7t7YcDxb4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div> -->
+    <!-- end -->
+    <!-- </div>
+    
+  </div> 
+
+
+</div>
+</div>
+</section> -->
+
+<!--END new feeds-->
+
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-offset-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+  <small>&copy; Copyright 2019 Team Onyx India. All Rights Reserved.</small>
+  </div>
+</div>
+      </section>
+          </div>
+        </div>
+      </section>
+
+  <!-- start footer -->
+ <!-- end footer -->
+</div>
+    </body>
+</html>

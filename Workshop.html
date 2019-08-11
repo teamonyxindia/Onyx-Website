@@ -1,0 +1,434 @@
+  
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aeronotics Team of kjsce ">
+    <meta name="author" content="Team Onyx">
+    <!-- <link rel="onyx logo" href="images/ONYX_LOGO_ICON.ico"  type="image/x-icon" /> -->
+    <link rel="icon" href="IMAGES/ONYXLOGO.PNG"   type="image/png"  /> 
+    <title>TEAM ONYX</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!-- Owl Carousel min CSS -->
+    <link rel="stylesheet" href="docs.theme.min.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="owl.carousel.min.css">
+    <link rel="stylesheet" href="owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="mycss.css">
+    <!-- font awesome -->
+    <link rel="text/stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap javascript component -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!-- link to  javascript -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+* {
+  font-family: 'Roboto';
+  text-align: center;
+}
+
+  
+.description{
+  font-weight: bold;
+  /*letter-spacing: 2px;*/
+  color: #999;
+  text-align:center;
+  /*border-bottom: 1px solid rgba(0, 0, 0,0.1);*/
+  /*padding-bottom: 5px;*/
+  font-size: 1.6em;
+  color:#3b5998;
+}
+
+.loader .fa {
+  color:black;
+}
+
+.loader {
+  width: 100px;
+  height: 80px;
+  position: fixed;
+  z-index: 99999;
+  top: 0; right: 0; left: 0; bottom: 0;
+  margin: auto;
+}
+.loader .image {
+  width: 100px;
+  height: 160px;
+  font-size: 40px;
+  text-align: center;
+  transform-origin: bottom center;
+  animation: 3s rotate infinite;
+  opacity: 0;
+}
+.loader span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes rotate{
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+</style>
+
+<script type="text/javascript">
+  $(window).on('load',function(){
+    $(".loader").css("display", "none");
+     $(".main").css("display", "block");
+});
+</script>
+
+</head>
+
+
+
+
+  <body>
+<div class="loader">
+                <div class="image">
+                  <i class="fa fa-plane"></i>
+                </div>
+                <span></span>
+        </div>
+
+        <script>
+                $(document).ready(function() {
+          var counter = 0;
+        
+          // Start the changing images
+          setInterval(function() {
+            if(counter == 3) { 
+              counter = 0; 
+            }
+        
+            changeImage(counter);
+            counter++;
+          }, 3000);
+        
+          // Set the percentage off
+          loading();
+        });
+        
+        function changeImage(counter) {
+          var images = [
+            '<i class="fa fa-fighter-jet"></i>',
+            '<i class="fa fa-paper-plane"></i>',
+            '<i class="fa fa-plane"></i>'
+          ];
+        
+          $(".loader .image").html(""+ images[counter] +"");
+        }
+        
+        function loading(){
+          var num = 1;
+        
+          for(i=0; i<=49; i++) {
+            setTimeout(function() { 
+              $('.loader span').html(num+'%');
+              num=num+2;
+            },i*120);
+          };
+        
+        }
+        </script>
+<div class="main" style="display:none;">
+    <!-- div for navbar-->
+    <div>
+      <nav class="navbar mynav navbar-default navbar-fixed-top " role="navigation">
+        <div class="container-fluid" >
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar" >
+              <span class="sr-only" >Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="http://www.somaiya.edu/kjsce" class="navbar-brand"  target="_blank" style="padding-left:10px"> 
+              <img src="IMAGES\sponsor\svv_logo18.png" class="navimgsize" alt="kjsce logo">
+            </a>
+            <a href="#" class="navbar-brand" >
+              <img src="IMAGES\ONYXLOGO.png" class="navimgsize" alt="Team onyx logo" style="padding-left:0px">
+            </a>
+          </div>
+          <div id="mynavbar" class="collapse navbar-collapse ">
+            <ul class="nav navbar-nav navbar-right nav_right_style" >
+              <li><a href="index.html">Home</a></li>
+              <li><a href="AboutUs.html">About Us</a></li>
+              <!-- <li><a href="OurTeam.html">Our Team</a></li> -->
+              <li><a href="OurTeam.html">Our Team</a></li>
+              <li class="active"><a href="#">Workshops</a></li>
+              <li><a href="Sponsors.html">Sponsors</a></li>
+              <!--<li><a href="CrowdFunding.html">Crowd Funding</a></li>-->
+              <li><a href="ContactUs.html">Contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>   
+    </div>
+    <!-- end navbars -->
+
+     <!-- start jumboton -->
+    <div class="jumbotron" id="jumbotron2">
+     <img src="IMAGES/Workshop/Workshop.jpeg" class="img-responsive " style="width:100% overflow:hidden">
+
+   </div>
+<!-- end jumbotron --> 
+<div class="container-fluid" style="padding-left: 0px !important; padding-right: 0px !important; margin:0;">
+   <h1 class="description" style="line-height: 50px;"> <span style="padding-bottom:12px ;border-bottom: 2px solid #E7E7E7;">Aeromodelling Workshops</span></h1>
+  <section style="padding-top: 0px;">
+    <div class="col-md-10 col-lg-10 col-xs-10 col-sm-10 col-centered " style="text-align:justify;">
+      <p >
+       Team Onyx India conducts workshops on a yearly basis which witness participation from colleges all over Mumbai. This Workshop is split into two days for convenience. The basics of aerodynamics, design, propulsion and manufacturing methods are discussed on the first day while the students get a hands-on experience of building an aircraft on the second. The positive reviews from the attendees motivates us to give us our best to inculcate various activities related to aeromodelling.
+      </p>
+  </div>
+  <button type="button" data-toggle="modal" data-target="" class="btn btn-primary" style="display: block; margin: 0 auto; background-color: #3b5998;">STAY TUNED FOR FURTHUR UPDATES</button>
+</section>
+
+<h1 class="description" style="line-height: 50px;"> <span style="padding-bottom:12px ;border-bottom: 2px solid #E7E7E7;">Gallery - Workshop 2018</span></h1>
+
+
+
+<!--workshop 2018 photos-->
+
+<div class="row">
+
+      <div class="col-lg-3 col-sm-4 col-xs-4 col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="">
+         <img src='IMAGES\Workshop\1.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%; " >
+              </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="">
+         <img src='IMAGES\Workshop\2.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+               
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="">
+         <img src='IMAGES\Workshop\3.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="">
+         <img src='IMAGES\Workshop\4.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+               
+      </div>
+  </div>
+
+      <div class="row">
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="">
+         <img src='IMAGES\Workshop\5.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="">
+         <img src='IMAGES\Workshop\6.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+               
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="">
+         <img src='IMAGES\Workshop\7.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="">
+         <img src='IMAGES\Workshop\8.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+               
+      </div>
+
+</div>
+<!--
+<div class="row">
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="">
+         <img src='IMAGES\Workshop\9.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="">
+         <img src='IMAGES\Workshop\10.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+               
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-1 col-xs-offset-1 col-md-offset-0 col-lg-offset-0  profile"> <div class="">
+         <img src='IMAGES\Workshop\11.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-4 col-xs-4  col-md-3 col-sm-offset-2 col-xs-offset-2 col-md-offset-0 col-lg-offset-0  profile"> 
+        <div class="">
+         <img src='IMAGES\Workshop\12.JPG' style="height:auto; width:100%; margin:3% 3% 10% 0%;" >
+         </div>
+               
+      </div>
+
+</div>-->
+
+<!--workshop photos end-->
+
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="padding: 15px 15px 0 15px">
+        <h4 class="modal-title" id="exampleModalLabel" style="text-align: center;">AEROMODELLING WORKSHOP 2019 REGISTRATION</h4>
+      </div>
+      <div class="modal-body">
+        <p>You will be notified about all the updates regarding the workshop.</p>
+        <form name="submit-to-google-sheet" method="POST"> 
+          <label for="fullname">Full Name</label>
+          <input type="text" name="fullname" class="fullname" required>
+          <label for="college">College</label>
+          <input type="text" name="college" class="college" required>
+          <label for="email">Email</label>
+          <input type="email" name="email" class="email" required>
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" name="mobile" class="mobile" required>
+          <label for="studying">Currently Studying</label>
+          <input type="text" name="sstudying" class="studying" required>
+          <br>
+          <p>If any queries, <br>Write to us at <b>teamonyxindia.engg@somaiya.edu</b><br> or <br>Contact us at <b>+91-9967154122</b></p>
+          <div class="row"><button type="submit" class="btn btn-primary">SUBMIT</button></div>
+
+        </form>
+      </div>
+            <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="close">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzHAxSZetnoExNLP0bMM8ob_U3jOe3jyDyG-f78kmPf68COGa0E/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(function(response) 
+        {console.log('Success!', response);
+        alert("Thank you for registering for the workshop.")})
+      .catch(function(error)
+        {console.error('Error!', error.message);
+        alert("There was error submitting your form. Please try again.")
+      })
+      document.getElementById('close').click()
+
+  });
+
+  $(document).ready(function()
+     {
+     $('#close').on('click', function (e) {
+    var $t = $(this),
+        target = $t[0].href || $t.data("target") || $t.parents('.modal') || [];
+  $(target)
+    .find("input,textarea,select")
+       .val('')
+       .end()
+    .find("input[type=checkbox], input[type=radio]")
+       .prop("checked", "")
+       .end();
+})
+  });
+
+</script>
+
+    <!-- start footer -->
+ <footer>
+ 
+  <div class="row" style="  max-width: none;" id="my_footer">
+ <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4 ">
+  <span ><i class="fa fa-phone" aria-hidden="true"></i></span><br>
+  <span>Raj Mandal: +91-9967154122<br/>
+  raj.mandal@somaiya.edu</span>
+ </div>
+ <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4"  >
+  <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span><br>
+  <span>
+  teamonyxindia.engg@somaiya.edu</span>
+ </div>
+ <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4">
+  <span><i class="fa fa-map-marker" aria-hidden="true"></i></span><br>
+  <span>Team Onyx<br />
+  Mega Project room, Aryabhatta building,<br/>
+  K. J. Somaiya College of Engineering<br />
+  Vidyavihar East<br />
+  Mumbai - 400077.</span>
+ </div>
+
+ <!-- social media links -->
+ <div  id="social_links" class="col-xs-12 col-sm-offset-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">  
+ <!-- fb -->
+ <a href="https://www.facebook.com/TeamOnyxIndia/" target="_blank"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i> </a>
+ <!-- youtube -->
+ <a href="https://www.youtube.com/channel/UCghiocKsIi8fK0hOQ1ot_6Q" target="_blank"><i class="fa fa-lg fa-youtube" aria-hidden="true"></i></a>
+ <!-- instagram -->
+ <a href="https://www.instagram.com/team_onyx_india/" target="_blank"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+ <!-- twitter -->
+ <a href="https://twitter.com/TeamOnyxIndia" target="_blank"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a>
+ <!-- linkedin -->
+ <a href="https://in.linkedin.com/company/team-onyx-india" target="_blank"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a>
+ </div>
+ <!-- end social media links -->
+
+<div class="col-xs-12 col-sm-offset-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+    <small>&copy; Copyright 2019 Team Onyx India. All Rights Reserved.</small>
+    </div> 
+
+  </div>
+
+ </footer>
+ <!-- end footer -->
+</div>
+</body>
+</html>
