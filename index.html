@@ -8,7 +8,7 @@
     <meta name="description" content="Aeronotics Team of kjsce ">
     <meta name="author" content="Team Onyx">
     <!-- <link rel="onyx logo" href="images/ONYX_LOGO_ICON.ico"  type="image/x-icon" /> -->
-    <link rel="icon" href="IMAGES/ONYXLOGO.PNG"   type="image/png"  /> 
+    <link rel="icon" href="IMAGES/ONYXLOGO.png"   type="image/png"  /> 
     <title>TEAM ONYX</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <!-- Bootstrap Core CSS -->
@@ -37,37 +37,37 @@
 /*************************************
  countdown 
  *****************************************/
-var countDownDate = new Date("Sept 15, 2019 15:37:25").getTime();
+// var countDownDate = new Date("Feb 16, 2020 24:00:00").getTime();
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+// // Update the count down every 1 second
+// var x = setInterval(function() {
 
-    // Get todays date and time
-    var now = new Date().getTime();
+//     // Get todays date and time
+//     var now = new Date().getTime();
     
-    // Find the distance between now an the count down date
+//     // Find the distance between now an the count down date
 
-    var distance = countDownDate - now;
+//     var distance = countDownDate - now;
     
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+//     // Time calculations for days, hours, minutes and seconds
+//     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    // Output the result in an element with id="demo"
+//     // Output the result in an element with id="demo"
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+//     document.getElementById("days").innerHTML = days;
+//     document.getElementById("hours").innerHTML = hours;
+//     document.getElementById("minutes").innerHTML = minutes;
+//     document.getElementById("seconds").innerHTML = seconds;
     
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-}, 1000);
+//     // If the count down is over, write some text 
+//     if (distance < 0) {
+//         clearInterval(x);
+//         document.getElementById("demo").innerHTML = "EXPIRED";
+//     }
+// }, 1000);
 
 /******************************************
 jumbotron initial page
@@ -161,7 +161,7 @@ if(($(window).width() > 768) && ($(window).width() < 992))
 /***********************************      
 navbar color change on scroll
 ****************************************/
-      $(window).scroll(function()
+      /*$(window).scroll(function()
         { var scroll = $(window).scrollTop();
           if (jumboHeight <= scroll) {
             $(".mynav").addClass("tansitionclass");
@@ -169,7 +169,7 @@ navbar color change on scroll
             $(".mynav").removeClass("tansitionclass");
           }
 
-          }); 
+          }); */
              /* parallex effect jumbotron*/
     // var ypos,img;
     // function parallex() {
@@ -353,6 +353,23 @@ img {vertical-align: middle;}*/
   margin: auto;
 }
 
+.skip {
+	position: fixed;
+	z-index: 99999;
+	top:85%;
+	right:0%;
+	background-color: rgba(30,30,30,0.3);
+	border-radius: 4px;
+	-webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  color: rgb(170,170,170);
+  font-size: 12px;
+}
+
+.skip:hover{
+	background-color: rgba(0,0,0,0.5);
+}
+
 </style>
 
 <script type="text/javascript">
@@ -360,6 +377,13 @@ img {vertical-align: middle;}*/
   	$(".loader").hide();
 	$(".main").show();
 },8000);
+
+  $(document).ready(function() { 
+            $("#skip").click(function() { 
+              	 $(".loader").hide();
+					$(".main").show();
+            }); 
+        }); 
 </script>
     
 </head>
@@ -409,7 +433,8 @@ img {vertical-align: middle;}*/
 <!-- start jumboton -->
     <div class="loader jumbotron" id="parallex_div">
         <div class="plain_text" style="color:white;display:none; font-weight: bold;"><h1>Team Onyx</h1>
-        <h2 style="color:white;">Aeromodelling team Of KJSCE</h2></div>   
+        <h2 style="color:white;">Aeromodelling team Of KJSCE</h2></div>
+       	<button class="skip" id="skip" onclick="">Skip</button>   
    </div>
 
    <!-- end jumbotron --> 
@@ -662,6 +687,8 @@ elements and manufacturing processes.
   <div class="container-fluid">
     <div class="owl-carousel owl-theme sponsors">
         <div class="item " ><img src="IMAGES\sponsor\svv_logo18.png" ></div>
+
+        <div class="item "><img src="IMAGES\sponsor\araldite.png"></div>
         
         <div class="item "><img src="IMAGES\sponsor\apc_logo6.png"></div>
         
@@ -669,7 +696,7 @@ elements and manufacturing processes.
         
         <div class="item "><img src="IMAGES\sponsor\ansys5.png"></div>
 
-        <div class="item "><img src="IMAGES\sponsor\HENKEL.PNG"></div>
+        <!--<div class="item "><img src="IMAGES\sponsor\HENKEL.PNG"></div>-->
 
     </div>
 </div>
@@ -743,26 +770,27 @@ elements and manufacturing processes.
 
 <div class="container-fluid clock-main" style="text-align:center">
 <h1 class="description" style="margin-bottom:40px;line-height: 50px;"><span style="padding-bottom:12px; border-bottom: 2px solid #E7E7E7;color:#3b5998;">UPCOMING EVENTS</span></h1>
-<h3 class="cound_head" style="margin-bottom: 3%; font-size: 1.7em;">AEROMODELLING WORKSHOP BEGINS IN</h3>
+<!-- <h3 class="cound_head" style="margin-bottom: 3%; font-size: 1.7em;">CROWDFUNDING 2019-20 ENDED</h3> -->
+<h3 class="cound_head" style="margin-bottom: 3%; font-size: 1.7em;">STAY TUNED FOR FURTHUR UPDATES</h3>
 <div id="clockdiv" class="row">
   <div class="col-md-3 col-sm-3 col-xs-3">
-    <span id="days"></span>
+    <span id="days">0</span>
     <div class="smalltext" style="margin-top: 10px;">Days</div>
   </div>
   <div class="col-md-3 col-sm-3 col-xs-3">
-    <span id="hours"></span>
+    <span id="hours">0</span>
     <div class="smalltext" style="margin-top: 10px;">Hours</div>
   </div>
   <div class="col-md-3 col-sm-3 col-xs-3">
-    <span id="minutes"></span>
+    <span id="minutes">0</span>
     <div class="smalltext" style="margin-top: 10px;">Minutes</div>
   </div>
   <div class="col-md-3 col-sm-3 col-xs-3">
-    <span id="seconds"></span>
+    <span id="seconds">0</span>
     <div class="smalltext" style="margin-top: 10px;">Seconds</div>
   </div>
 </div>
-<a href="Workshop.html"><button type="button" data-toggle="modal" class="button1">KNOW MORE !</button></a>
+<button type="button" data-toggle="modal" class="button1">STAY TUNED !</button></a>
 </div>
 
 
@@ -806,8 +834,8 @@ elements and manufacturing processes.
   <div class="row" style="  max-width: none;" id="my_footer">
  <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4 ">
   <span ><i class="fa fa-phone" aria-hidden="true"></i></span><br>
-  <span>Raj Mandal: +91-9967154122<br/>
-  raj.mandal@somaiya.edu</span>
+  <span>Khushi Shah: +91-8291642480<br/>
+  khushi.cs@somaiya.edu</span>
  </div>
  <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4"  >
   <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span><br>
@@ -839,7 +867,7 @@ elements and manufacturing processes.
  <!-- end social media links -->
 
 <div class="col-xs-12 col-sm-offset-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
-	<small>&copy; Copyright 2019 Team Onyx India. All Rights Reserved.</small>
+	<small>&copy; Copyright 2020 Team Onyx India. All Rights Reserved.</small>
 	</div> 
 
   </div>
